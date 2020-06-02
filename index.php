@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home | Create Modules From PDFs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Screen Shot</title>
 	<!-- CSS only -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -9,19 +11,20 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container-fluid">
 	<h3><strong>Upgrade Basecamp today and run your business better.</strong></h3>
 	<h6>Pick a plan below and join over <strong>120,000 companies</strong> that upgrade their Basecamp.</h6>
 	<div class="card shadowed" style="padding: 20px 0px;">
 		<h5><strong>Which payment option fits you best?</strong></h5>
 		<div class="row" style="text-align: center; display: block; margin: auto;">
 			<div class="col" style="max-width: 85%; margin: auto;">
-				<div class="row" style="padding: 10px;">
-					<div class="col-md">
+				<div><img src="img/best_values.png" width="80px"></div>
+				<div class="row" style="margin-top: 20px;">
+					<div class="col-md" style="padding: 10px;">
 						<div class="card inner" style="border: 2px solid #725EAD; background-color: #F9F9F9;">
 							<h5><strong>Pay annually</strong></h5>
 							<button class="button" style="margin: 5px 0px;">Choose this plan</button>
-							<div class="price-list" style="margin-top: 10px;">
+							<div class="price-list">
 								<ul>
 									<li><i class="fa fa-check-circle" style="color: #725EAD;"></i><strong> $999/year</strong> - 2 months free</li>
 									<li><i class="fa fa-check-circle" style="color: #725EAD;"></i> 1TB storage</li>
@@ -30,11 +33,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md">
+					<div class="col-md" style="padding: 10px;">
 						<div class="card inner">
 							<h5><strong>Pay monthly</strong></h5>
 							<button class="button" style="margin: 5px 0px;">Choose this plan</button>
-							<div class="price-list" style="margin-top: 10px;">
+							<div class="price-list">
 								<ul>
 									<li><i class="fa fa-check-circle" style="color: #725EAD;"></i><strong> $99/month</strong></li>
 									<li><i class="fa fa-check-circle" style="color: #725EAD;"></i> 500GB storage</li>
@@ -46,7 +49,10 @@
 				</div>
 			</div>
 		</div>
-		<p style="color: #8D7A5D;">included with your upgrade:<br/>Unlimited Projects and Teams &#9679; Unlimited users &#9679; No Per-User Fees</p>
+		<div style="padding: 10px;">
+			<p style="color: #8D7A5D;">included with your upgrade:<br/>Unlimited Projects and Teams &#9679; Unlimited users &#9679; No Per-User Fees</p>
+		</div>
+		<a href="readPdf.php" class="btn btn-success">READ PDF</a>
 	</div>
 </div>
 
