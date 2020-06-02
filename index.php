@@ -12,7 +12,7 @@
 <body>
 
 <div class="container-fluid">
-	<h3><strong>Upgrade Basecamp today and run your business better.</strong></h3>
+	<h3><strong>Get started with Updates on PHP Hacks, delivered to you mail everyday</strong></h3>
 	<h6>Pick a plan below and join over <strong>120,000 companies</strong> that upgrade their Basecamp.</h6>
 	<div class="card shadowed" style="padding: 20px 0px;">
 		<h5><strong>Which payment option fits you best?</strong></h5>
