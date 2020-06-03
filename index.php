@@ -25,8 +25,8 @@
 				    Friends
 				  </a>
 				  <div class="right menu">
-				    <a class="item btn btn-md btn-success" href="#" data-to>
-				      Get Started for Free
+				    <a class="item btn btn-md btn-success" href="#" id="showRegisterModal">
+				      Get Started
 				    </a>
 				  </div>
 				</div>
@@ -77,39 +77,177 @@
 
 
 	<!-- Modals Here -->
-	<div class="ui modal">
-  <i class="close icon"></i>
-  <div class="header">
-    Profile Picture
-  </div>
-  <div class="image content">
-    <div class="ui medium image">
-      <img src="/images/avatar/large/chris.jpg">
-    </div>
-    <div class="description">
-      <div class="ui header">We've auto-chosen a profile image for you.</div>
-      <p>We've grabbed the following image from the <a href="https://www.gravatar.com" target="_blank">gravatar</a> image associated with your registered e-mail address.</p>
-      <p>Is it okay to use this photo?</p>
-    </div>
-  </div>
-  <div class="actions">
-    <div class="ui black deny button">
-      Nope
-    </div>
-    <div class="ui positive right labeled icon button">
-      Yep, that's me
-      <i class="checkmark icon"></i>
-    </div>
-  </div>
-</div>
+
+		<!-- Register Modal -->
+		<div class="ui modal text-center" id="registerModal">
+		  <i class="close icon"></i>
+		  <div class="header">
+		    Register to Get Started for Free
+		  </div>
+		  <div class="image content">
+		    <div class="description">
+		      <div class="ui header">We carefully curated and corrected hacks, for you.</div>
+
+					<!-- Register -->
+						<div id="register" style="margin-top: 20px;">
+		<div class="card shadowed" style="max-width: 600px;">
+			<form class="ui form" method="POST" style="padding: 20px;">
+				<h3 class="ui dividing header">Register</h3>
+				<div class="two fields">
+					<div class="field">
+						<label for="firstname">Firstname</label>
+						<input type="name" id="firstname" name="firstname" class="form-control popup-form-info" placeholder="e.g. John" data-content="This should contain a valid name" value="<?php if (isset($_POST['firstname'])) echo $_POST['firstname'] ?>">
+					</div>
+					<div class="field">
+						<label for="lastname">Lastname</label>
+						<input type="name" id="lastname" name="lastname" class="form-control popup-form-info" placeholder="e.g. James" data-content="This should contain a valid name" value="<?php if (isset($_POST['firstname'])) echo $_POST['lastname'] ?>">
+					</div>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" class="form-control popup-form-info" placeholder="e.g. name@email.com" data-content="This should contain a valid E-mail address" value="<?php if (isset($_POST['email'])) echo $_POST['email'] ?>">
+					</div>
+					<div class="field">
+						<label for="tel">Phone Number</label>
+						<input type="tel" id="tel" name="tel" class="form-control popup-form-info" placeholder="000-0000-0000 make use of hyphens ' - '" data-content="Please make use of the hyphens e.g. 000-0000-0000" value="<?php if (isset($_POST['tel'])) echo $_POST['tel'] ?>">
+					</div>
+				</div>
+				<div class="two fields">
+					<div class="field">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" class="form-control popup-form-info" placeholder="Password" data-content="Password must contain at least 8 characters, upper-case, lower-case, and number.">
+					</div>
+					<div class="field">
+						<label for="confirm">Confirm-Password</label>
+						<input type="password" id="confirm" name="confirm" class="form-control popup-form-info" placeholder="Confirm-Password" data-content="This should be exactly the same as the Password">
+					</div>
+				</div>
+				
+				<input type="submit" name="submit-register" class="ui violet basic button" value="Submit">
+				<input type="reset" name="reset" class="ui button basic secondary" value="Reset">
+			</form>
+			<p>Already Registered? <a href='#' id="showLoginModal">Log in here instead</a></p>
+			<div class="mb-5"></div>
+
+			<?php
+
+				require("process/register_process.php");
+
+			?>
+		</div>
+	</div>
+	<!-- End of Register Modal -->
+
+	
+	<!-- Register Form Ends Here -->
+
+		      
+		    </div>
+		  </div>
+		  <div class="actions">
+		    <div class="ui red deny button">
+		      Close
+		    </div>
+		  </div>
+		</div>
+
+
+
+		<!-- Login Modal -->
+			<div class="ui modal text-center" id="loginModal">
+		  <i class="close icon"></i>
+		  <div class="header">
+		    Log into your Account
+		  </div>
+		  <div class="image content">
+		    <div class="description">
+		      <div class="ui header">We carefully curated and corrected hacks, for you.</div>
+
+					<!-- Login Form -->
+						<div id="login" style="margin-top: 20px;">
+		<div class="card shadowed" style="max-width: 600px;">
+			<form class="ui form" method="POST" style="padding: 20px;">
+				<h3 class="ui dividing header">Log in</h3>
+				<div class="field">
+					<label for="login-email">Email</label>
+					<input type="email" id="email" name="login-email" class="form-control popup-form-info" placeholder="e.g. name@email.com" data-content="This should contain a valid E-mail address" value="<?php if (isset($_POST['login-email'])) echo $_POST['login-email'] ?>">
+				</div>
+				<div class="field">
+					<label for="login-password">Password</label>
+					<input type="password" id="login-password" name="login-password" class="form-control popup-form-info" placeholder="Password" data-content="Password must contain at least 8 characters, upper-case, lower-case, and number.">
+				</div>
+				<input type="submit" name="submit-login" class="ui violet basic button" value="Submit">
+				<input type="reset" name="reset" class="ui button basic secondary" value="Reset">
+			</form>
+			<p>Not Registered? <a href="#" id="reshowRegisterModal">Register here</a></p>
+			<div class="mb-5"></div>
+
+			<?php
+
+				require("process/login_process.php");
+
+			?>
+		</div>
+	</div>
+
+					<!-- Login Form Ends Here -->
+
+		      
+		    </div>
+		  </div>
+		  <div class="actions">
+		    <div class="ui red deny button">
+		      Close
+		    </div>
+		  </div>
+		</div>
+
+		<!-- End of Login Modal -->
 
 
 	<!-- End of Modals here -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="third_parties/semantic-ui/semantic.min.js"></script>
 <script>
-	$('.ui.modal')
-  .modal('show');
+	$('#showRegisterModal').on('click', function(e){
+		$('#registerModal')
+		.modal({
+			closable: false
+		})
+  		.modal('show');
+
+  		e.preventDefault();
+	})
+
+	$('#reshowRegisterModal').on('click', function(e){
+		$('#registerModal')
+		.modal({
+			closable: false
+		})
+  		.modal('show');
+
+  		e.preventDefault();
+	})
+
+
+	//LoginModal 
+	//
+	$("#showLoginModal").on('click', function(e){
+		$('#loginModal')
+		.modal({
+			closable: false
+		})
+  		.modal('show');
+
+  		e.preventDefault();
+
+
+
+	})
+	
+	
 </script>
 </body>
 </html>
